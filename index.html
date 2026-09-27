@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KSUI Dentistry | Soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  body {
+    font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px 80px;
+    
+    /* خلفية جبل الطور */
+    background-image: url('https://i.ibb.co/7dd0033z/187381a2331ee42249b0557605e921cf.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  
+  /* طبقة شفافة فوق الجبل عشان النصوص تبان */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(26, 58, 92, 0.75) 0%,
+      rgba(15, 37, 55, 0.85) 50%,
+      rgba(10, 25, 40, 0.9) 100%
+    );
+    z-index: 0;
+  }
+  
+  /* ===== المحتوى ===== */
+  .main {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    max-width: 700px;
+    width: 100%;
+  }
+  
+  /* ===== اللوجو ===== */
+  .logo {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 12px;
+    box-shadow: 
+      0 15px 50px rgba(0, 0, 0, 0.5),
+      0 0 0 6px rgba(201, 162, 39, 0.4);
+  }
+  
+  /* ===== اسم الجامعة ===== */
+  .uni-name {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .uni-name .ksiu {
+    color: #e6c34a;
+    font-weight: 900;
+    letter-spacing: 3px;
+  }
+  
+  /* ===== خط فاصل ===== */
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 5px 0;
+  }
+  
+  .divider .line {
+    width: 70px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c9a227, transparent);
+  }
+  
+  .divider .dot {
+    width: 8px;
+    height: 8px;
+    background: #c9a227;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(201, 162, 39, 0.9);
+  }
+  
+  /* ===== Soon ===== */
+  .soon {
+    font-size: 64px;
+    font-weight: 900;
+    color: #c9a227;
+    letter-spacing: 8px;
+    line-height: 1;
+    text-transform: uppercase;
+    text-shadow: 0 4px 25px rgba(201, 162, 39, 0.4);
+  }
+  
+  .soon-ar {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 3px;
+    line-height: 1.4;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* ===== نص التشويق ===== */
+  .teaser {
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.9;
+    max-width: 500px;
+    padding: 0 15px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .teaser .highlight {
+    color: #e6c34a;
+    font-weight: 700;
+  }
+  
+  /* ===== خط تحميل متحرك خفيف ===== */
+  .loading-bar {
+    width: 200px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  .loading-bar::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, #c9a227, transparent);
+    border-radius: 2px;
+    animation: loading 2s ease-in-out infinite;
+  }
+  
+  @keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(350%); }
+  }
+  
+  /* ===== الحقوق ===== */
+  .rights {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    z-index: 1;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .rights strong {
+    color: #c9a227;
+    font-weight: 700;
+  }
+  
+  /* ===== موبايل ===== */
+  @media (max-width: 600px) {
+    body {
+      background-attachment: scroll;
+      padding: 20px 15px 70px;
+    }
+    
+    .logo {
+      width: 160px;
+      height: 160px;
+      padding: 8px;
+    }
+    
+    .uni-name {
+      font-size: 18px;
+    }
+    
+    .soon {
+      font-size: 46px;
+      letter-spacing: 5px;
+    }
+    
+    .soon-ar {
+      font-size: 24px;
+    }
+    
+    .teaser {
+      font-size: 13px;
+    }
+    
+    .loading-bar {
+      width: 150px;
+    }
+    
+    .rights {
+      font-size: 11px;
+      bottom: 15px;
+    }
+    
+    .divider .line {
+      width: 50px;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .logo {
+      width: 130px;
+      height: 130px;
+    }
+    
+    .uni-name {
+      font-size: 15px;
+    }
+    
+    .soon {
+      font-size: 38px;
+      letter-spacing: 4px;
+    }
+    
+    .soon-ar {
+      font-size: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="main">
+  
+  <!-- اللوجو -->
+  <img 
+    src="https://i.ibb.co/TDPRQVtk/download-1.webp" 
+    alt="KSUI Logo" 
+    class="logo">
+  
+  <!-- اسم الجامعة -->
+  <div class="uni-name">
+    جامعة الملك سلمان الدولية - <span class="ksiu">K S I U</span>
+  </div>
+  
+  <!-- خط فاصل -->
+  <div class="divider">
+    <div class="line"></div>
+    <div class="dot"></div>
+    <div class="line"></div>
+  </div>
+  
+  <!-- Soon -->
+  <div class="soon">Soon</div>
+  <div class="soon-ar">قريباً</div>
+  
+  <!-- نص التشويق -->
+  <p class="teaser">
+    حاجة <span class="highlight">كبيرة</span> جاية في السكة<br>
+    منصتك الشاملة لطلاب <span class="highlight">Level 1 - أسنان</span><br>
+    استعدوا... المفاجأة قربت
+  </p>
+  
+  <!-- شريط تحميل -->
+  <div class="loading-bar"></div>
+  
+</div>
+
+<!-- الحقوق -->
+<div class="rights">
+  جميع الحقوق محفوظة © <strong>S1M</strong>
+</div>
+
+</body>
+</html>
